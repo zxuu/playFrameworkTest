@@ -1,3 +1,3 @@
 # playFrameworkTest
 
-![](https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif)
+![](https://github.com/zxuu/playFrameworkTest/blob/master/images/%E7%99%BB%E5%BD%95.png)
