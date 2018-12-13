@@ -1,0 +1,94 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Language" content="zh-CN" />
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+		<meta content="all" name="robots" />
+		<meta name="author" content="作者信息" />
+		<meta name="Copyright" content="版权信息" />
+		<meta name="description" content="站点介绍" />
+		<meta name="keywords" content="站点关键词" />
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<title>修改名字</title>
+
+		<!-- <script language="javascript" src="https://ca.nuc.edu.cn:443/zfca/js/ukeylogin.js"></script> -->
+		<script type='text/javascript' src='dwr/interface/UsermanAjax.js'></script>
+		<script type='text/javascript' src='dwr/engine.js'></script>
+<script type='text/javascript' src='dwr/util.js'></script>
+<script language="javascript" src="js/BatAjax.js"></script>
+
+		<link rel="stylesheet" href="https://ca.nuc.edu.cn:443/zfca/login/css/module.css"
+			type="text/css" media="all" />
+		<link rel="stylesheet" href="https://ca.nuc.edu.cn:443/zfca/login/css/public.css"
+			type="text/css" media="all" />
+		<script type='text/javascript' >
+			if (top!=window){
+  				top.window.location.href='/zfca/logout?'+new Date().getTime();
+			}
+		</script>
+		<!--[if IE 6]> 
+<script src="../js/ie6comm.js"></script> 
+<script> 
+DD_belatedPNG.fix('img'); 
+</script> 
+<![endif]-->
+	</head>
+    <h1>&{'student_change_name.title'} ${student}</h1>
+	#{if flash.error} 
+    <p style="color:#c00"> ${flash.error} </p> 
+	#{/if} 
+	#{form @doModifyName(), enctype:'multipart/form-data'}
+	<body class="login_bg">
+
+		<div id="container" class="login_main">
+			<div class="login_logo">
+				<h2>
+					<a href="#"><img src="https://ca.nuc.edu.cn:443/zfca/login/logo/logo_school.png" />
+					</a>
+				</h2>
+				<h3>
+					<a href="#"><img src="https://ca.nuc.edu.cn:443/zfca/login/logo/logo_rz.png" />
+					</a>
+				</h3>
+			</div>
+			<div class="login_left">
+				<img class="login_pic" src="https://ca.nuc.edu.cn:443/zfca/login/logo/login_pic.png" />
+			</div>
+			<form id="fm1" name="fm1" class="fm-v clearfix" action="/zfca/login" method="post" onsubmit="return CheckForm();">
+				<input type="hidden" id="useValidateCode" name="useValidateCode"
+					value="1" />
+				<input type="hidden" id="isremenberme" name="isremenberme"
+					value="0" />
+				<input type="hidden" id="ip" name="ip" value="" />
+				<div class="login_right">
+					<div class="login" id="thetable">
+						
+						<div class="hide" id="msg"></div>
+					    #{form @doModifyName(), enctype:'multipart/form-data'}
+
+                        <div >
+                                <input id="studentid" type="hidden" name="object.id" value="${object.id}" /> 
+                        </div>
+                        <div class="crudField crud_student">
+                                <label for="studentname">&{'请输入名字'}</label>
+                                <input id="studentname" type="text" name="object.nameString" value="${object.nameString}" /> 
+                                <span class="crudHelp"></span>
+                        </div>
+                                <p class="buttons">
+                                        <input type="submit" name="_save" value="&{'确认'}" />
+                                </p>
+					    #{/form}
+					</div>
+				</div>
+				<div  class="login_copyright">
+				<p>版权所有：中北大学　CopyRight 2004-2009　地址：山西省太原市学院路3号<br />
+邮政编码：030051　　非经营性互联网信息服务审批号　(晋)ICP备05000467号</p></div>
+				</div>
+			</form>
+			<script type="text/javascript">
+ </script>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+#{extends 'CRUD/layout.html' /}
+<h1>&{'student_change_xuefen.title'} ${student}</h1>
+
+#{if flash.error} 
+<p style="color:#c00"> ${flash.error} </p> 
+#{/if} 
+
+#{form @doModifyXuefen(), enctype:'multipart/form-data'}
+
+<div >
+        <input id="studentid" type="hidden" name="object.id" value="${object.id}" /> 
+</div>
+<div class="crudField crud_student">
+        <label for="studentname">&{'修改学分'}</label>
+        <input id="studentxuefen" type="text" name="object.xuefen" value="${object.xuefen}" /> 
+        <span class="crudHelp"></span>
+</div>
+   
+        <p class="buttons">
+                    <input type="submit" name="_save" value="&{'student_change_xuefen.save'}" />
+            </p>
+#{/form} 
